@@ -1,9 +1,9 @@
-import React, { Props } from 'react';
-import HeadComponent from '../components/head';
-import { Z_BLOCK } from 'zlib';
-import TextComponent from '../components/text';
+import React from 'react';
+import HeadComponent from '../../components/head';
+import TextComponent from '../../components/text';
 import { runInThisContext } from 'vm';
-import PlaceholderComponent from '../components/placeholder';
+import PlaceholderComponent from '../../components/placeholder';
+import { StructureEntity } from '../../model/structure.entity';
 
 export class Block {
   name: string;
@@ -17,12 +17,18 @@ export class Block {
 }
 
 
-class RendererComponent extends React.Component {
+interface Props {
+  structure: StructureEntity;
+  fetchStructures(): void;
+}
+
+
+class RendererComponent extends React.Component<Props,{}> {
   components: Array<Block> = new Array<Block>();
 
-  state: { currentComponent: string; };
+  state: { currentComponent: string };
 
-  constructor(props: Props<any>) {
+  constructor(props: Props) {
     super(props)
 
     let blockHead: Block = new Block('head', HeadComponent)
@@ -33,10 +39,17 @@ class RendererComponent extends React.Component {
     this.state = {
       currentComponent : 'text'
     }
+    console.log('this.props')
+    console.log(this.props.structure);
+  }
+
+
+  public componentDidMount() {
+    console.log('componentDidMount');
+    this.props.fetchStructures();
   }
 
   memberRow = (currentComponent: string) => {
-    debugger;
     let COMPONENT = PlaceholderComponent;
     this.components.forEach(block => {
       if (block.name == currentComponent) {

@@ -1,0 +1,3 @@
+export const actionTypes = {
+    FETCH_STRUCTURE_COMPLETED: 'FETCH_STRUCTURE_COMPLETED'
+};
