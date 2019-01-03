@@ -1,14 +1,14 @@
 import { connect } from 'react-redux';
 import { State } from '../../reducers';
 import RendererComponent from './rendererComponent';
-import { fetchStructuresAction } from './renderer.actions';
+import { fetchStructureByIdAction } from './renderer.actions';
 
 const mapStateToProps = (state: State) => ({
-  structure: state.structure,
+  structure: state.structure
 });
 
 const mapDispatchToProps = (dispatch: any) => ({
-  fetchStructures: () => dispatch(fetchStructuresAction()),
+  fetchStructureById: (structureId: string) => dispatch(fetchStructureByIdAction(structureId)),
 });
 
 export const RendererContainer = connect(

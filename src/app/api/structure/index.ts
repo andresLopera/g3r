@@ -1,7 +1,7 @@
 import { structures } from './structure.mock.data';
 import { StructureEntity } from '../../model/structure.entity';
 
-const baseURL = 'https://api.github.com/orgs/lemoncode';
+const baseURL = 'https://api.github.com/';
 let mockStructure = structures;
 
 const fetchStructure = (): Promise<StructureEntity[]> => {

@@ -19,14 +19,14 @@ export class Block {
 
 interface Props {
   structure: StructureEntity;
-  fetchStructures(): void;
+  fetchStructureById(structureId: string): void;
 }
 
 
 class RendererComponent extends React.Component<Props,{}> {
   components: Array<Block> = new Array<Block>();
 
-  state: { currentComponent: string };
+  state: { currentComponent: string, currentStructureId: string };
 
   constructor(props: Props) {
     super(props)
@@ -37,7 +37,8 @@ class RendererComponent extends React.Component<Props,{}> {
     this.components.push(blockHead)
     this.components.push(blockText)
     this.state = {
-      currentComponent : 'text'
+      currentComponent : 'text',
+      currentStructureId: '200'
     }
     console.log('this.props')
     console.log(this.props.structure);
@@ -46,7 +47,11 @@ class RendererComponent extends React.Component<Props,{}> {
 
   public componentDidMount() {
     console.log('componentDidMount');
-    this.props.fetchStructures();
+    this.props.fetchStructureById('200');
+
+    console.log('this.props  2')
+    console.log(this.props.structure);
+
   }
 
   memberRow = (currentComponent: string) => {
@@ -65,10 +70,18 @@ class RendererComponent extends React.Component<Props,{}> {
 
   handleChange = (event: any) => {
     this.setState({ currentComponent: event.target.value });
-    console.log(`Option selected:`, event.target.value);
+  }
+
+  handleChangeStructureId = (event: any) => {
+    this.setState( { currentStructureId : event.target.value });
+    this.props.fetchStructureById(event.target.value);
   }
 
   public render() {
+
+    console.log('this.props 3 ')
+    console.log(this.props.structure);
+
     return (
       <div>
         <select value={this.state.currentComponent} onChange={this.handleChange}>
@@ -76,6 +89,13 @@ class RendererComponent extends React.Component<Props,{}> {
           <option value="head">Head</option>
         </select>
         { this.memberRow(this.state.currentComponent) }
+        <p>id : { this.props.structure.id }</p>
+
+        <select value={this.state.currentStructureId} onChange={this.handleChangeStructureId}>
+          <option value="100">100</option>
+          <option value="200">200</option>
+          <option value="300">300</option>
+        </select>
       </div>
     );
   }
