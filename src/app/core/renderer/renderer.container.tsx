@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { State } from '../../reducers';
-import RendererComponent from './rendererComponent';
+import RendererComponent from './renderer.component';
 import { fetchStructureByIdAction } from './renderer.actions';
 
 const mapStateToProps = (state: State) => ({

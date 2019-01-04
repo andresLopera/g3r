@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class TextComponent extends Component {
+export class TextComponent extends Component {
   render() {
     return (
       <div>
@@ -9,5 +9,3 @@ class TextComponent extends Component {
     );
   }
 }
-
-export default TextComponent;

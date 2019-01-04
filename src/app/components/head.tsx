@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class HeadComponent extends Component {
+export class HeadComponent extends Component {
   render() {
     return (
       <div>
@@ -9,5 +9,3 @@ class HeadComponent extends Component {
     );
   }
 }
-
-export default HeadComponent;
