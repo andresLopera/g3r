@@ -3,7 +3,7 @@ import { BlockComponent } from '../model/blockComponent';
 import { HeadComponent } from '../components/head';
 import { TextComponent } from '../components/text';
 import PlaceholderComponent from '../components/placeholder';
-import { DefaultPageComponent } from '../pages/defaultPage.component';
+import { DefaultPageComponent } from '../pages/defaultPage/defaultPage.component';
 
 export class References {
 
@@ -20,15 +20,15 @@ export class References {
     }
 
     private setComponents() {
-        let blockHead: BlockComponent = new BlockComponent('headId', 'head', HeadComponent)
-        let blockText: BlockComponent = new BlockComponent('textId', 'text', TextComponent)
+        let blockHead: BlockComponent = new BlockComponent('headId', HeadComponent)
+        let blockText: BlockComponent = new BlockComponent('textId', TextComponent)
 
         this.components.push(blockHead)
         this.components.push(blockText)
     }
 
     private setPagesComponents() {
-        let defaultPage: BlockComponent = new BlockComponent('defaultPageId', 'defaultPage', DefaultPageComponent)
+        let defaultPage: BlockComponent = new BlockComponent('defaultPageId', DefaultPageComponent)
 
         this.pagesComponents.push(defaultPage);
 
@@ -42,20 +42,20 @@ export class References {
         return References._instance;
     }
 
-    getComponentByName(_componentName: string) {
+    getComponentByTypeId(_typeId: string) {
         let _COMPONENT = PlaceholderComponent;
         this.components.forEach(block => {
-            if (block.name == _componentName) {
+            if (block.typeId == _typeId) {
               _COMPONENT = block.component
             };
           })
           return _COMPONENT;
     }
 
-    getPageById(_pageId: string) {
+    getPageByTypeId(_typeId: string) {
         let _page = DefaultPageComponent;
         this.pagesComponents.forEach(block => {
-            if (block.id == _pageId) {
+            if (block.typeId == _typeId) {
               _page = block.component
             };
           })

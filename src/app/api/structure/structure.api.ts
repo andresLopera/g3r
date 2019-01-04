@@ -23,8 +23,7 @@ const mapToStructures = (structures: any[]): StructureEntity[] => {
 const mapToStructure = (structure : StructureEntity): StructureEntity => {
   return {
     id: structure.id,
-    rootPage: structure.rootPage,
-    pages: structure.pages
+    rootPage: structure.rootPage
   };
 };
 

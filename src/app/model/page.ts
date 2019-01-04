@@ -4,5 +4,5 @@ export interface Page {
     id: string
     type: string
     name: string
-    root: BlockElement
+    children: BlockElement[]
 }

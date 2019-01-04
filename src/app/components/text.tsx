@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import { DefaultProps } from '../common/default.props';
 
-export class TextComponent extends Component {
+export class TextComponent extends React.Component<DefaultProps,{}> {
   render() {
     return (
       <div>

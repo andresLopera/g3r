@@ -1,11 +1,9 @@
 export class BlockComponent {
-    id: string;
-    name : string;
+    typeId : string;
     component: any;
 
-    constructor(_id: string, _name: string, _component: any) {
-        this.id = _id;
-        this.name = _name;
+    constructor(_typeId: string, _component: any) {
+        this.typeId = _typeId;
         this.component = _component;
     }
 }

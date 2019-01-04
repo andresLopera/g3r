@@ -3,9 +3,7 @@ import { StructureEntity } from '../model/structure.entity';
 
 
 const createEmptyStructure = (): StructureEntity => ({
-  id: '-1',
-  rootPage : '',
-  pages : []
+  id: '-1'
 });
 
 export const structureReducer = (state: StructureEntity = createEmptyStructure(), action: any) => {

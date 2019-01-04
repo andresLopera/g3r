@@ -1,11 +1,11 @@
 import React from 'react';
 import { RendererProps } from './renderer.props';
 import { BlockComponent } from '../../model/blockComponent';
-import { References } from '../references';
+import { References } from '../../common/references';
 
 
 class RendererComponent extends React.Component<RendererProps,{}> {
-  components: Array<BlockComponent> = new Array<BlockComponent>();
+  components: Array<BlockComponent> = new Array<BlockComponent>()
 
   references = References.getInstance()
 
@@ -15,32 +15,22 @@ class RendererComponent extends React.Component<RendererProps,{}> {
 
   constructor(props: RendererProps) {
     super(props)
-
     this.state = {
-      currentStructureId: '200',
+      currentStructureId: 'idStructure',
     }
   }
-
 
   public componentDidMount() {
     this.props.fetchStructureById(this.state.currentStructureId)
   }
 
-  private rendererAction = (currentComponent: string) => {
-    let COMPONENT = this.references.getComponentByName(currentComponent)
+  private rendererPage = () => {
+    if (this.props.structure.rootPage == undefined ||
+      this.props.structure.rootPage.type == '') return
+    let PAGE = this.references.getPageByTypeId(this.props.structure.rootPage.type)
     return (
       <div>
-        <COMPONENT />
-      </div>
-    )
-  }
-
-  private rendererPage = (_pageId: string) => {
-    if (_pageId == "") return;
-    let PAGE = this.references.getPageById(_pageId)
-    return (
-      <div>
-        <PAGE blockId={_pageId} type="page" />
+        <PAGE page={ this.props.structure.rootPage } />
       </div>
     )
   }
@@ -48,11 +38,9 @@ class RendererComponent extends React.Component<RendererProps,{}> {
   public render() {
     return (
       <div>
-        { this.rendererPage(this.props.structure.rootPage) }
+        { this.rendererPage() }
       </div>
     );
   }
 }
-
-
 export default RendererComponent;

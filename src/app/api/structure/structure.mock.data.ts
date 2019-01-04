@@ -2,26 +2,21 @@ import { StructureEntity } from "../../model/structure.entity";
 
 export const structures: StructureEntity[] = [{
         id: "idStructure",
-        rootPage: "idRootPage",
-        pages: [
+        rootPage:
             {
                 id : "idRootPage",
-                type: "",
+                type: "defaultPageId",
                 name: "home",
-                root: {
-                    id: "idBlockElement",
-                    type: "text",
+                children: [{
+                    id: "1",
+                    type: "textId",
                     name: "inputName",
                     children : []
-                }
+                },{
+                    id: "2",
+                    type: "headId",
+                    name: "Head",
+                    children : []
+                }]
             }
-        ]
-},{
-    id: '200',
-    rootPage: 'rootPage200',
-    pages: []
-},{
-    id: '300',
-    rootPage: 'rootPage300',
-    pages: []
 }];
