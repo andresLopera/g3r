@@ -1,6 +1,6 @@
 import { Store, createStore, compose, applyMiddleware } from 'redux';
 import reduxThunk from 'redux-thunk';
-import { state, State } from './reducers';
+import { state, State } from './state';
 
 export const store: Store<State> = createStore(
   state,

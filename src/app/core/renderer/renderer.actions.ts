@@ -1,4 +1,4 @@
-import { structureAPI } from '../../api/structure';
+import { structureAPI } from '../../api/structure/structure.api';
 import { StructureEntity } from '../../model/structure.entity';
 import { actionTypes } from '../../common/constant/actionTypes';
 

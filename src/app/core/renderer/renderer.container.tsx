@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { State } from '../../reducers';
+import { State } from '../../state';
 import RendererComponent from './renderer.component';
 import { fetchStructureByIdAction } from './renderer.actions';
 
