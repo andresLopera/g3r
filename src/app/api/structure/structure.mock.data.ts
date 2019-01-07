@@ -17,6 +17,16 @@ export const structures: StructureEntity[] = [{
                     type: "headId",
                     name: "Head",
                     children : []
+                },{
+                    id: "3",
+                    type: "inputId",
+                    name: "Input",
+                    children: []
+                }, {
+                    id: "4",
+                    type: "buttonId",
+                    name: "button",
+                    children: []
                 }]
             }
 }];

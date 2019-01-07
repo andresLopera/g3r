@@ -4,6 +4,8 @@ import { HeadComponent } from '../components/head';
 import { TextComponent } from '../components/text';
 import PlaceholderComponent from '../components/placeholder';
 import { DefaultPageComponent } from '../pages/defaultPage/defaultPage.component';
+import { InputComponent } from '../components/input';
+import { ButtonComponent } from '../components/button';
 
 export class References {
 
@@ -22,9 +24,13 @@ export class References {
     private setComponents() {
         let blockHead: BlockComponent = new BlockComponent('headId', HeadComponent)
         let blockText: BlockComponent = new BlockComponent('textId', TextComponent)
+        let blockInput: BlockComponent = new BlockComponent('inputId', InputComponent)
+        let blockButton: BlockComponent = new BlockComponent('buttonId', ButtonComponent)
 
         this.components.push(blockHead)
         this.components.push(blockText)
+        this.components.push(blockInput)
+        this.components.push(blockButton)
     }
 
     private setPagesComponents() {
