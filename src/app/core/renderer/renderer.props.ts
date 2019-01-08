@@ -1,4 +1,4 @@
-import { StructureEntity } from "../../model/structure.entity";
+import { StructureEntity } from "../structure/structure.entity";
 
 export interface RendererProps {
     structure: StructureEntity;

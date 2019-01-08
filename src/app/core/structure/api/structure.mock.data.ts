@@ -1,4 +1,4 @@
-import { StructureEntity } from "../../model/structure.entity";
+import { StructureEntity } from "../structure.entity";
 
 export const structures: StructureEntity[] = [{
         id: "idStructure",

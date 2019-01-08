@@ -1,5 +1,5 @@
 import { actionTypes } from '../../common/constant/actionTypes';
-import { StructureEntity } from '../../model/structure.entity';
+import { StructureEntity } from './structure.entity';
 
 
 const createEmptyStructure = (): StructureEntity => ({

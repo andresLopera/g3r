@@ -1,6 +1,6 @@
-import { structureAPI } from '../../api/structure/structure.api';
-import { StructureEntity } from '../../model/structure.entity';
+import { StructureEntity } from './structure.entity';
 import { actionTypes } from '../../common/constant/actionTypes';
+import { structureAPI } from './api/structure.api';
 
 export const fetchStructureByIdAction = (structureId: string) => (dispatch: any) => {
     structureAPI.fetchStructureById(structureId).then( (structure) => {
