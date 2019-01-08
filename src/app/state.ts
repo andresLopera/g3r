@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 import { StructureEntity } from './model/structure.entity';
-import { structureReducer } from './reducers/structure.reducer';
+import { structureReducer } from './core/structure/structure.reducer';
 
 export interface State {
     structure: StructureEntity
