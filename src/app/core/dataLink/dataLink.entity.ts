@@ -1,6 +1,6 @@
 import { ChannelEntity } from "./channel.entity";
 
-export interface LinkDataEntity {
+export interface DataLinkEntity {
     id: string
     name: string
     channels: Array<ChannelEntity>
