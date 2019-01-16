@@ -6,10 +6,10 @@ import { DataLinkReducer } from './core/dataLink/dataLink.reducer';
 
 export interface State {
     structure: StructureEntity,
-    linkData: DataLinkEntity
+    dataLink: DataLinkEntity
 };
 
 export const state = combineReducers<State>({
     structure : structureReducer,
-    linkData : DataLinkReducer
+    dataLink : DataLinkReducer
 });

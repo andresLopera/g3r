@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { DefaultProps } from '../common/default.props';
 
-class PlaceholderComponent extends Component {
+class PlaceholderComponent extends React.Component<DefaultProps,{}> {
   render() {
     return (
       <div>

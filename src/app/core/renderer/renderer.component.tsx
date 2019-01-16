@@ -10,18 +10,21 @@ class RendererComponent extends React.Component<RendererProps,{}> {
   references = References.getInstance()
 
   state: {
-    currentStructureId: string
+    currentStructureId: string,
+    currentDataLinkId: string
   };
 
   constructor(props: RendererProps) {
     super(props)
     this.state = {
       currentStructureId: 'idStructure',
+      currentDataLinkId: 'id-1'
     }
   }
 
   public componentDidMount() {
     this.props.fetchStructureById(this.state.currentStructureId)
+    this.props.fetchDataLinkById(this.state.currentDataLinkId)
   }
 
   private rendererPage = () => {
@@ -30,7 +33,7 @@ class RendererComponent extends React.Component<RendererProps,{}> {
     let PAGE = this.references.getPageByTypeId(this.props.structure.rootPage.type)
     return (
       <div>
-        <PAGE page={ this.props.structure.rootPage } />
+        <PAGE page={ this.props.structure.rootPage } dataLink={ this.props.dataLink }/>
       </div>
     )
   }

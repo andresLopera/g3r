@@ -36,7 +36,7 @@ const fetchDataLinkById = (id: string): Promise<any> => {
   return Promise.resolve(dataLink);
 }
 
-export const structureAPI = {
+export const dataLinkAPI = {
   fetchDataLinks,
   fetchDataLinkAsync,
   fetchDataLinkById

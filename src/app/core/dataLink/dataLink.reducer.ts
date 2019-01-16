@@ -5,7 +5,7 @@ import { DataLinkEntity } from './dataLink.entity';
 const createEmptyDataLink = (): DataLinkEntity => ({
   id: '-1',
   name: '',
-  channels: []
+  channels: new Map()
 });
 
 export const DataLinkReducer = (state: DataLinkEntity = createEmptyDataLink(), action: any) => {

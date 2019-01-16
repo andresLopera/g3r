@@ -1,11 +1,13 @@
 
 import { BlockComponent } from '../model/blockComponent';
 import { HeadComponent } from '../components/head';
-import { TextComponent } from '../components/text';
+import { TextComponent } from '../components/text/text.component';
 import PlaceholderComponent from '../components/placeholder';
 import { DefaultPageComponent } from '../pages/defaultPage/defaultPage.component';
 import { InputComponent } from '../components/input';
 import { ButtonComponent } from '../components/button';
+import { TextContainer } from '../components/text/text.container';
+import { Component } from 'react';
 
 export class References {
 

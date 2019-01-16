@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Route, HashRouter, Switch } from 'react-router-dom';
-import RootComponent from './core/rootComponent';
+import RootComponent from './core/root/root.component';
 import { Provider } from 'react-redux';
 import { store } from '../store';
 import { RendererContainer } from './core/renderer/renderer.container';

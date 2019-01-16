@@ -1,5 +1,4 @@
 import React, { Children } from 'react';
-import { DefaultProps } from '../../common/default.props';
 import { References } from '../../common/references';
 import { DefaultPageProps } from '../../common/defaultPage.props';
 import { BlockElement } from '../../model/blockElement';
@@ -17,7 +16,7 @@ export class DefaultPageComponent  extends React.Component<DefaultPageProps,{}> 
     let COMPONENT = this.references.getComponentByTypeId(_blockElement.type)
     return (
       <div key={_blockElement.id}>
-        <COMPONENT/>
+        <COMPONENT value="lorem ipsum"/>
       </div>
     )
   }
@@ -31,6 +30,7 @@ export class DefaultPageComponent  extends React.Component<DefaultPageProps,{}> 
             this.rendererComponent(blockElement)
           )
         }
+        <p> value : { JSON.stringify(this.props.dataLink.channels.get('id-1')) }</p>
       </div>
     );
   }
