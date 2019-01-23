@@ -1,3 +1,6 @@
+import { actionTypes } from "../../common/constant/actionTypes";
+import { ChannelEntity } from "./channel.entity";
+
 export class DataLinkService {
     private static _instance: DataLinkService;
     private store: any;
@@ -18,6 +21,10 @@ export class DataLinkService {
 
     public getState() {
         return this.store.getState();
+    }
+
+    public changeValueOfChannel(channel: ChannelEntity) {
+        this.dispatch( { type: actionTypes.CHANGE_VALUE_TO_CHANNEL, payload: channel })
     }
 
 

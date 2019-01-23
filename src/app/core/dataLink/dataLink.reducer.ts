@@ -1,5 +1,6 @@
 import { actionTypes } from '../../common/constant/actionTypes';
 import { DataLinkEntity } from './dataLink.entity';
+import { ChannelEntity } from './channel.entity';
 
 
 const createEmptyDataLink = (): DataLinkEntity => ({
@@ -23,6 +24,20 @@ const handleFetchDataLinkCompleted = (state: DataLinkEntity, payload: DataLinkEn
   return payload;
 };
 
-const handleChangeValueToChannel = (state: DataLinkEntity, payload: DataLinkEntity) =>  {
-  return payload;
+const handleChangeValueToChannel = (state: DataLinkEntity, channel: ChannelEntity) =>  {
+  let _channels = state.channels.map(_channel => {
+    if (_channel.id == channel.id) {
+      return {
+        ..._channel,
+        value: channel.value
+      }
+    } else {
+      return _channel
+    }
+  });
+
+  return {
+    ...state,
+    channels: _channels
+  }
 }
