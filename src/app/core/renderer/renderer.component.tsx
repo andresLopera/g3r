@@ -2,12 +2,15 @@ import React from 'react';
 import { RendererProps } from './renderer.props';
 import { BlockComponent } from '../../model/blockComponent';
 import { References } from '../../common/references';
+import { DataLinkService } from '../dataLink/dataLink.service';
+import { store } from '../../store';
 
 
 class RendererComponent extends React.Component<RendererProps,{}> {
   components: Array<BlockComponent> = new Array<BlockComponent>()
 
   references = References.getInstance()
+  dataLinkService = DataLinkService.getInstance()
 
   state: {
     currentStructureId: string,
@@ -20,6 +23,8 @@ class RendererComponent extends React.Component<RendererProps,{}> {
       currentStructureId: 'idStructure',
       currentDataLinkId: 'id-1'
     }
+
+    store.dispatch = this.dataLinkService.setStore(store)
   }
 
   public componentDidMount() {

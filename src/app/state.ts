@@ -9,7 +9,7 @@ export interface State {
     dataLink: DataLinkEntity
 };
 
-export const state = combineReducers<State>({
+export const reducer = combineReducers<State>({
     structure : structureReducer,
     dataLink : DataLinkReducer
 });

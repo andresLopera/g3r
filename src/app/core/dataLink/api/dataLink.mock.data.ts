@@ -9,5 +9,8 @@ channel.set('id-2', {id: 'id-2', name: 'age_person', value: 1 });
 export const dataLinks: DataLinkEntity[] = [{
     id: "id-1",
     name: "dataLinks",
-    channels: channel
+    channels: [
+        {id: 'id-1', name: 'name_person', value: 'andres lopera' },
+        {id: 'id-2', name: 'age_person', value: 1 }
+    ]
 }];

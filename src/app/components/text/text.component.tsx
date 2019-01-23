@@ -3,10 +3,11 @@ import { DefaultProps } from '../../common/default.props';
 
 export class TextComponent extends React.Component<DefaultProps,{}> {
   render() {
-    console.log("text.compoent: " + this.props.value);
+    console.log("text.compoent: ")
+    console.log(this.props.channel);
     return (
       <div>
-        <h1>TextComponent  { this.props.value }</h1>
+        <h1>TextComponent  { this.props.channel.value }</h1>
       </div>
     );
   }
