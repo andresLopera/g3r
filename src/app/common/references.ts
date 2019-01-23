@@ -4,7 +4,7 @@ import { HeadComponent } from '../components/head';
 import { TextComponent } from '../components/text/text.component';
 import PlaceholderComponent from '../components/placeholder';
 import { DefaultPageComponent } from '../pages/defaultPage/defaultPage.component';
-import { InputComponent } from '../components/input/input';
+import { InputComponent } from '../components/input/input.component';
 import { ButtonComponent } from '../components/button/button.component';
 import { Component } from 'react';
 

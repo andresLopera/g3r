@@ -19,6 +19,12 @@ export const structures: StructureEntity[] = [{
                     name: "button",
                     channelId: "id-1",
                     children: []
+                },{
+                    id: "3",
+                    type: "inputId",
+                    name: "input",
+                    channelId: "id-1",
+                    children: []
                 }]
             }
 }];
