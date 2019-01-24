@@ -30,10 +30,10 @@ export class DefaultPageComponent  extends React.Component<DefaultPageProps,{}> 
   }
 
   private getChannelById(_channelId: string): ChannelEntity {
-    let _defaultChannel: ChannelEntity = { id: '-1', name: '', value: null };
+    let _defaultChannel: ChannelEntity = { id: '-1', value: null };
     return this.props.dataLink.channels.reduce( function (previewChannel: ChannelEntity, channel: ChannelEntity) {
       return (channel.id == _channelId) ? channel : previewChannel;
-    }, { id: '-1', name: '', value: null });
+    }, { id: '-1', value: null });
   }
 
   handleChange(event: any) {
