@@ -8,7 +8,7 @@ export class InputComponent extends React.Component<DefaultProps,{}> {
 
   handleChange = (e: any) => {
     e.preventDefault();
-    this.dataLinkService.changeValueOfChannel({id: 'id-1', name: 'name_person', value: e.target.value })
+    this.dataLinkService.changeValueOfChannel({id: 'id-1', value: e.target.value })
   }
 
   render() {
