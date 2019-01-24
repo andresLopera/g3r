@@ -11,7 +11,7 @@ export class ButtonComponent extends React.Component<DefaultProps,{}> {
   handleClick = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
     console.log('The button was clicked.')
-    this.dataLinkService.changeValueOfChannel({id: 'id-1', name: 'name_person', value: 'Lorem ipsum' })
+    this.dataLinkService.changeValueOfChannel({id: 'id-1', value: 'Lorem ipsum' })
   }
 
 
