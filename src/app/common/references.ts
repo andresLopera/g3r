@@ -6,7 +6,7 @@ import PlaceholderComponent from '../components/placeholder';
 import { DefaultPageComponent } from '../pages/defaultPage/defaultPage.component';
 import { InputComponent } from '../components/input/input.component';
 import { ButtonComponent } from '../components/button/button.component';
-import { Component } from 'react';
+import { ListComponent } from '../components/list/list.component';
 
 export class References {
 
@@ -27,11 +27,13 @@ export class References {
         let blockText: BlockComponent = new BlockComponent('textId', TextComponent)
         let blockInput: BlockComponent = new BlockComponent('inputId', InputComponent)
         let blockButton: BlockComponent = new BlockComponent('buttonId', ButtonComponent)
+        let blockList: BlockComponent = new BlockComponent('listId', ListComponent);
 
         this.components.push(blockHead)
         this.components.push(blockText)
         this.components.push(blockInput)
         this.components.push(blockButton)
+        this.components.push(blockList)
     }
 
     private setPagesComponents() {

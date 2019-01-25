@@ -7,7 +7,7 @@ export class TextComponent extends React.Component<DefaultProps,{}> {
     console.log(this.props.channel);
     return (
       <div>
-        <h1>TextComponent  { this.props.channel.value }</h1>
+        <span>{ this.props.channel.value }</span>
       </div>
     );
   }
