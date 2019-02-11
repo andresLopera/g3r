@@ -6,7 +6,7 @@ export class ListComponent extends React.Component<DefaultProps,{}> {
 
   public dataLinkService = DataLinkService.getInstance()
   state = {
-      data: ['andres', 'felipe']
+      data: []
   }
 
   constructor(props: DefaultProps) {
