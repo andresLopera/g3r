@@ -14,7 +14,7 @@ export class InputComponent extends React.Component<DefaultProps,{}> {
   render() {
     return (
       <div>
-        <input type="text" onChange={this.handleChange}></input>
+        <input type="text" required onChange={this.handleChange}></input>
       </div>
     );
   }

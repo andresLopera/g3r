@@ -18,7 +18,7 @@ export class ButtonComponent extends React.Component<DefaultProps,{}> {
   render() {
     return (
       <div>
-        <button onClick={this.handleClick}>Enviar</button>
+        <button type="submit">Enviar</button>
       </div>
     );
   }

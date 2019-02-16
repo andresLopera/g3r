@@ -7,6 +7,8 @@ import { DefaultPageComponent } from '../pages/defaultPage/defaultPage.component
 import { InputComponent } from '../components/input/input.component';
 import { ButtonComponent } from '../components/button/button.component';
 import { ListComponent } from '../components/list/list.component';
+import { BlockElement } from '../model/blockElement';
+import FormComponent from '../components/form/form';
 
 export class References {
 
@@ -27,13 +29,15 @@ export class References {
         let blockText: BlockComponent = new BlockComponent('textId', TextComponent)
         let blockInput: BlockComponent = new BlockComponent('inputId', InputComponent)
         let blockButton: BlockComponent = new BlockComponent('buttonId', ButtonComponent)
-        let blockList: BlockComponent = new BlockComponent('listId', ListComponent);
+        let blockList: BlockComponent = new BlockComponent('listId', ListComponent)
+        let blockForm: BlockComponent = new BlockComponent('formId', FormComponent)
 
         this.components.push(blockHead)
         this.components.push(blockText)
         this.components.push(blockInput)
         this.components.push(blockButton)
         this.components.push(blockList)
+        this.components.push(blockForm)
     }
 
     private setPagesComponents() {
